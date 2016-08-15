@@ -1,0 +1,26 @@
+[
+   {
+      "session":{
+         "email":"aryanpra16dec@gmail.com",
+         "password":"1234",
+         "firstname":"Arun",
+         "lastname":"Arya",
+         "id":"1"
+      },
+      "message":{
+         "login":"You are logged In."
+      }
+   },
+   {
+      "session":{
+         "email":"john123@gmail.com",
+         "password":"1234",
+         "firstname":"John",
+         "lastname":"dab",
+         "id":"2"
+      },
+      "message":{
+         "login":"You are logged In."
+      }
+   }
+]

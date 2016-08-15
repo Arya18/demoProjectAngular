@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Read Products</title>
+
+        <!-- include material design CSS -->
+        <link rel="stylesheet" href="/css/materialize/css/materialize.min.css" />
+
+        <!-- include material design icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <!-- custom CSS -->
+        <style>
+            .width-30-pct{
+                width:30%;
+            }
+
+            .text-align-center{
+                text-align:center;
+            }
+
+            .margin-bottom-1em{
+                margin-bottom:1em;
+            }
+            #start-button, #login-button {
+                background-color: #f3989b;
+                font-size: 18px;
+                font-weight: 400;
+                height: 70px;
+                line-height: 70px;
+                width: 260px;
+            }
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1 0 auto;
+            }
+        </style>
+    </head>
+    <body  ng-controller="PhoneListController">
+        
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#/profile">My profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#/logout" ng-click="logout()">Logout</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo" ng-cloak>{{logo}}</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#/about">About us</a></li>
+                    <li><a href="#/services">Services</a></li>
+                    <li><a href="#/listing">Product listing</a></li>
+                    <li ng-if="!session"><a href="#/signup" >Login/Signup</a></li>
+
+                    <li ng-show="session" ><a class="dropdown-button" href="#!" data-activates="dropdown1">{{username}}<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#/about">About us</a></li>
+                    <li><a href="#/service">Services</a></li>
+                    <li ng-if="!session"><a href="#/signup">Login/Signup</a></li>
+
+                </ul>
+            </div>
+        </nav>
+        <main>
+        <div ng-view ></div>
+        </main>
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                     Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- material design js -->
+        <script src="/css/materialize/js/materialize.min.js"></script>
+        <!-- include angular js -->
+        <script src="/bower_components/angular/angular.min.js"></script>
+        <script src="/bower_components/angular-route/angular-route.min.js"></script>
+        <script src="app.js"></script>
+        <script src="/js/config.js"></script>        
+        <script>
+                                $(document).ready(function () {
+                                    $('.modal-trigger').leanModal();
+                                    $(".button-collapse").sideNav();
+                                    $(".dropdown-button").dropdown();
+                                    $('select').material_select();
+                                });
+                               
+
+        </script>
+
+    </body>
+</html>

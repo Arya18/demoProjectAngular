@@ -1,0 +1,23 @@
+<div class="container"><div class="row" ><br/><br/><br/><br/>
+        <p ng-show="session">Session created {{ username }}</p>
+    <form class="col s12" ng-submit="loginForm()">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" required type="email" class="validate" ng-model="logins.email">
+                <label for="email"  data-error="wrong" data-success="right">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password"  ng-model="logins.password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row center">
+            <button class="btn waves-effect waves-light " type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>
+</div>
